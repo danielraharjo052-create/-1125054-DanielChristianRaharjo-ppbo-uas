@@ -1,6 +1,4 @@
-package model;
-
-public abstract class GObject {
+public abstract class GObject implements KeyValueDetailableI {
 
     private String label;
 
@@ -8,5 +6,18 @@ public abstract class GObject {
         this.label = label;
     }
 
-    public abstract String[][] getKeyValueDetails()
+    public String labelGet() {
+        return label;
+    }
+
+    public void labelSet(String label) {
+        this.label = label;
+    }
+
+    @Override
+    public String[][] getKeyValueDetails() {
+        return new String[][] {
+            {"label", label}
+        };
+    }
 }
