@@ -20,9 +20,10 @@ public class PrintUtil {
 
             for (String[] detail : details) {
                 System.out.println(
-                    detail[0] + " : " + detail[1]
-                );
+                        detail[0] + " : " + detail[1]);
             }
+            
+            
         }
 
         System.out.println("--------------");

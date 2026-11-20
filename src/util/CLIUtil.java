@@ -15,4 +15,35 @@ public class CLIUtil {
 
         System.out.print(message);
 
-                
+        try {
+            Double value = input.nextDouble();
+            input.nextLine();
+
+            if (value <= 0) {
+                throw new InputException(
+                    "Nilai wajib > dari 0"
+                );
+            }
+            return value;
+
+        } catch (Exception e) {
+            input.nextLine();
+            throw new InputException("Input harus dalam bentuk angka ya");
+        }
+    }
+
+    public static Integer inputInteger(String message) {
+        System.out.print(message);
+
+        try {
+            Integer value = input.nextInt();
+            input.nextLine();
+            return value;
+
+        } catch (Exception e) {
+            input.nextLine();
+            return -1;
+        }
+    }
+}
+
