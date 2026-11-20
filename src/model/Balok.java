@@ -47,5 +47,18 @@ public class Balok extends Object3D {
         return panjang * lebar * tinggi;
     }
 
-    public void 
+    @Override
+    public String[][] getKeyValueDetails() {
+        String[][] parent = super.getKeyValueDetails();
+
+        return new String[][] {
+            parent[0],
+            {"luas permukaan", hitungLuasPermukaan().toString()},
+            {"volume", hitungVolume().toString()},
+            {"tipe", "Balok"},
+            {"panjang", panjang.toString()},
+            {"lebar", lebar.toString()},
+            {"tinggi", tinggi.toString()}
+        };
+    }
 }
