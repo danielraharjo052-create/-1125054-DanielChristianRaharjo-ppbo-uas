@@ -23,9 +23,20 @@ public class Lingkaran extends Object2D {
     }
 
     @Override
-    public Double hitungVolume() {
+    public Double hitungKeliling() {
         return 2 * 3.14 * jariJari;
     }
 
-    
+    @Override
+    public String[][] getKeyValueDetails() {
+        String[][] parent = super.getKeyValueDetails();
+
+        return new String[][] {
+            parent[0],
+            {"luas", hitungLuas().toString()},
+            {"keliling", hitungKeliling().toString()},
+            {"tipe", "Lingkaran"},
+            {"jari-jari", jariJari.toString()}
+        };
+    }
 }
